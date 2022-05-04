@@ -1,5 +1,5 @@
 import { memo, useContext } from 'react';
-import { AppContext } from '../../Provider/AppProvider';
+import { AppContext } from '../../provider/AppProvider';
 import BackButton from '../atoms/BackButton';
 
 const CompleteField = memo(() => {
