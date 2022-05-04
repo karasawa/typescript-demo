@@ -2,19 +2,16 @@ import { memo, useContext } from 'react';
 import { AppContext } from '../../Provider/AppProvider';
 
 const AddButton = memo(() => {
-    const {inputName, todoArr, setTodoArr} = useContext(AppContext);
+    const {inputName, setInputName, imcompleteTodoArr, setImcompleteTodoArr} = useContext(AppContext);
 
     const addTodoHandle = () => {
-        console.log(todoArr);
-        setTodoArr([...todoArr, inputName]);
+        setImcompleteTodoArr([...imcompleteTodoArr, inputName]);
+        setInputName('');
     }
 
     return(
         <>
         <button onClick={addTodoHandle}>追加</button>  
-        {todoArr.map((target) => (
-            <li>{target}</li>
-        ))}
         </>
     );
 });
